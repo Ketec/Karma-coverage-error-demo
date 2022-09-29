@@ -2,9 +2,26 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'test';
+  uis = {
+    "type": "HorizontalLayout",
+    "elements": [
+      {
+        "type": "Control",
+        "scope": "#/properties/active",
+        "label": "Boolean"
+      }
+    ]
+  };
+
+  schema = {
+    "type": "object",
+    "properties": {
+      "active": {
+        "type": "boolean"
+      }
+    }
+  }  
 }

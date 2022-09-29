@@ -2,10 +2,20 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "declarationMap": false,
+    "declaration": true,
+    "inlineSources": true,
+    "allowSyntheticDefaultImports": true,
     "outDir": "./out-tsc/spec",
     "types": [
       "jasmine"
     ]
+  },
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true,
+    "strictMetadataEmit": true,
+    "enableResourceInlining": true,
+    "compilationMode": "partial"
   },
   "files": [
     "src/test.ts",

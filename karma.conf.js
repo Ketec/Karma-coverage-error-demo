@@ -1,44 +1,60 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
+const path = require('path');
 
 module.exports = function (config) {
   config.set({
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
+      require('@angular-devkit/build-angular/plugins/karma'),
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
+      require('karma-mocha-reporter'),
       require('karma-jasmine-html-reporter'),
+      require('karma-junit-reporter'),
       require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('karma-sonarqube-reporter')
     ],
     client: {
-      jasmine: {
-        // you can add configuration options for Jasmine here
-        // the possible options are listed at https://jasmine.github.io/api/edge/Configuration.html
-        // for example, you can disable the random execution with `random: false`
-        // or set a specific seed with `seed: 4321`
+      captureConsole: true,
+      mocha: {
+        bail: true
       },
-      clearContext: false // leave Jasmine Spec Runner output visible in browser
-    },
-    jasmineHtmlReporter: {
-      suppressAll: true // removes the duplicated traces
+      jasmine: {
+        timeoutInterval: 10000
+      }
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/test'),
+      dir: path.join(__dirname, './karma-tests/coverage'),
       subdir: '.',
-      reporters: [
-        { type: 'html' },
-        { type: 'text-summary' }
-      ]
+      type: 'lcovonly'
     },
-    reporters: ['progress', 'kjhtml'],
+    sonarqubeReporter: {
+      basePath: path.join(__dirname, 'src'),
+      filePattern: '**/*spec.ts',
+      encoding: 'utf-8',
+      outputFolder: path.join(__dirname, './karma-tests/reports'),
+      legacyMode: false,
+      reportName: (metadata) => metadata[0] + '.xml'
+    },
+    junitReporter: {
+      outputDir: './karma-tests/junit',
+      suite: 'karma',
+    },
+    reporters: ['mocha', 'coverage', 'sonarqube', 'kjhtml', 'junit'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['headless'],
     singleRun: false,
-    restartOnFileChange: true
+
+    customLaunchers: {
+      headless: {
+        base: "ChromeHeadless",
+        flags: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-web-security', '--disable-gpu']
+      }
+    }
   });
 };

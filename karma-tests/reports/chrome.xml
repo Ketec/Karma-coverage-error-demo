@@ -1,0 +1,19 @@
+<?xml version='1.0'?>
+<testExecutions version='1'>
+    <file path='C:/Users/flash/Desktop/test/src/app/jsonforms/controls/boolean.renderer.spec.ts'>
+        <testCase name='BooleanControlRenderer should not be checked' duration='68'>
+            <failure message='TestCase failed'>TypeError: Cannot read properties of undefined (reading '$state')
+    at BooleanControlRenderer.JsonFormsAbstractControl.ngOnInit (node_modules/@jsonforms/angular/__ivy_ngcc__/lib/esm/abstract-control.js:64:1)
+    at callHook (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:2538:1)
+    at callHooks (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:2507:1)
+    at executeInitAndCheckHooks (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:2458:1)
+    at refreshView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:9499:1)
+    at refreshEmbeddedViews (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:10609:1)
+    at refreshView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:9508:1)
+    at refreshEmbeddedViews (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:10609:1)
+    at refreshView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:9508:1)
+    at refreshComponent (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:10655:1)
+</failure>
+        </testCase>
+    </file>
+</testExecutions>

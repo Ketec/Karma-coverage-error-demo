@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome Headless 105.0.5195.127 (Windows 10)" package="karma" timestamp="2022-09-29T21:50:00" id="0" hostname="DESKTOP-MGRPBBQ" tests="1" errors="0" failures="1" time="0.068">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/105.0.5195.127 Safari/537.36"/>
+  </properties>
+  <testcase name="BooleanControlRenderer should not be checked" time="0.068" classname="Chrome_Headless_105_0_5195_127_(Windows_10)..BooleanControlRenderer">
+    <failure type="">TypeError: Cannot read properties of undefined (reading '$state')
+    at BooleanControlRenderer.JsonFormsAbstractControl.ngOnInit (node_modules/@jsonforms/angular/__ivy_ngcc__/lib/esm/abstract-control.js:64:1)
+    at callHook (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:2538:1)
+    at callHooks (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:2507:1)
+    at executeInitAndCheckHooks (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:2458:1)
+    at refreshView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:9499:1)
+    at refreshEmbeddedViews (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:10609:1)
+    at refreshView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:9508:1)
+    at refreshEmbeddedViews (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:10609:1)
+    at refreshView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:9508:1)
+    at refreshComponent (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:10655:1)
+</failure>
+  </testcase>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
